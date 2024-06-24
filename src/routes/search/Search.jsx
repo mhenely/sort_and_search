@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react'
+import { NavLink } from 'react-router-dom';
 
-import './Grid.styles.css'
+import './Search.styles.css'
 
-const Grid = () => {
+const Search = () => {
 
   const [ maze, setMaze ] = useState([]);
   const [ currentTimeouts, setCurrentTimeouts ] = useState([]);
   const [ speed, setSpeed ] = useState(75);
   const [ speedLevel, setSpeedLevel ] = useState(3);
-  // const [ alreadyRun, setAlreadyRun ] = useState(false);
-
 
   const runSearch = (search, startNode=[0,0], height=maze[0].length, width=maze.length) => {
     
@@ -135,39 +134,45 @@ const Grid = () => {
   }
 
   return (
-    <div className='maze-grid'>
-      <div className='controls-container'>
-        <button className='maze-button' onClick={() => generateNewMaze(30, 30)}>New Maze</button>
-        <div className='button-container'>
-          <button className='maze-button' onClick={() => runSearch('bfs')}>BFS</button>
-          <button className='maze-button' onClick={() => runSearch('dfs')}>DFS</button>
-          <div className='speed-container'>
-            <button onClick={() => handleSpeed('decrease')}>&#10094;</button>
-            <h3>{`Speed (1-5): ${speedLevel}`}</h3>
-            <button onClick={() => handleSpeed('increase')}>&#10095;</button>
+    <div className='body'>
+      {/* <div className='navigation'>
+        <NavLink to='/' as='span'>Home</NavLink>
+        <NavLink to='/sort' as='span'>Sort</NavLink>
+      </div> */}
+      <div className='maze-grid'>
+        <div className='controls-container'>
+          <button className='maze-button' onClick={() => generateNewMaze(30, 30)}>New Maze</button>
+          <div className='button-container'>
+            <button className='maze-button' onClick={() => runSearch('bfs')}>BFS</button>
+            <button className='maze-button' onClick={() => runSearch('dfs')}>DFS</button>
+            <div className='speed-container'>
+              <button onClick={() => handleSpeed('decrease')}>&#10094;</button>
+              <h3>{`Speed (1-5): ${speedLevel}`}</h3>
+              <button onClick={() => handleSpeed('increase')}>&#10095;</button>
+            </div>
           </div>
         </div>
-      </div>
-      <div className='maze'>
-        {
-          maze.map((row, rowIdx) => {
-            return (
-            <div key={rowIdx} className='row'>
-              {
-                row.map((cell, cellIdx) => {
-                  return (
-                    <div key={cellIdx} className={`cell ${cell}`}>
-                    </div>
-                  )
-                })
-              }
-            </div> 
-            )
-          })
-        }
+        <div className='maze'>
+          {
+            maze.map((row, rowIdx) => {
+              return (
+              <div key={rowIdx} className='row'>
+                {
+                  row.map((cell, cellIdx) => {
+                    return (
+                      <div key={cellIdx} className={`cell ${cell}`}>
+                      </div>
+                    )
+                  })
+                }
+              </div> 
+              )
+            })
+          }
+        </div>
       </div>
     </div>
   )
 }
 
-export default Grid
+export default Search;

@@ -1,3 +1,6 @@
+.body {
+  background-color: black;
+}
 
 .maze-grid {
   display: flex;
@@ -22,6 +25,10 @@ button {
   padding: 10px 20px
 }
 
+h3 {
+  color: white;
+}
+
 .maze {
   display: flex;
   flex-direction: column;
@@ -37,7 +44,7 @@ button {
 .cell {
   width: 40px;
   height: 40px;
-  border: 1px solid white;
+  /* border: 1px solid white; */
 }
 
 .cell.wall {
@@ -45,7 +52,7 @@ button {
 }
 
 .cell.path {
-  background-color: blue;
+  background-color: grey;
 }
 
 .cell.end {
