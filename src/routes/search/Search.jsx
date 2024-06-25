@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 import './Search.styles.css'
 
@@ -7,7 +7,7 @@ const Search = () => {
 
   const [ maze, setMaze ] = useState([]);
   const [ currentTimeouts, setCurrentTimeouts ] = useState([]);
-  const [ speed, setSpeed ] = useState(75);
+  const [ speed, setSpeed ] = useState(60);
   const [ speedLevel, setSpeedLevel ] = useState(3);
 
   const runSearch = (search, startNode=[0,0], height=maze[0].length, width=maze.length) => {
@@ -124,11 +124,11 @@ const Search = () => {
   }, [])
 
   const handleSpeed = (change) => {
-    if (change === 'increase' && speed > 25) {
-      setSpeed(speed - 25);
+    if (change === 'increase' && speed > 20) {
+      setSpeed(speed - 20);
       setSpeedLevel(speedLevel + 1);
-    } else if (change === 'decrease' && speed < 125) {
-      setSpeed(speed + 25);
+    } else if (change === 'decrease' && speed < 100) {
+      setSpeed(speed + 20);
       setSpeedLevel(speedLevel - 1)
     }
   }
