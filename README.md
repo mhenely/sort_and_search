@@ -14,23 +14,9 @@ Adjust the speed of the visualizer prior to initiating a run. To initiate a run:
 - Click either the BFS or DFS button if no run has been initiated
 - Click New Maze if a run has been initiated and/or concluded and then click either BFS or DFS
 
+![Alt text](src/assets/finished-search.jpeg 'A Finished Search')
+
 ## In development
 
 - Additional search methods
 - A sorting algorithm visualizer
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
