@@ -9,6 +9,9 @@ Currently, two official search methods are available:
 
 ## How to use
 
+- Clone the repo and run npm install in the root directory
+- npm run dev in the terminal for quickest access
+
 Adjust the speed of the visualizer prior to initiating a run. To initiate a run:
 
 - Click either the BFS or DFS button if no run has been initiated
