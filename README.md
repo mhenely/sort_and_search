@@ -1,17 +1,23 @@
-# React + TypeScript + Vite
+# React Search Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This search visualizer provides the ability to see how various search methods perform when traversing a maze.
 
-Currently, two official plugins are available:
+Currently, two official search methods are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Breadth First Search
+- Depth First Search
 
-## Expanding the ESLint configuration
+## How to use
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Adjust the speed of the visualizer prior to initiating a run. To initiate a run:
 
-- Configure the top-level `parserOptions` property like this:
+- Click either the BFS or DFS button if no run has been initiated
+- Click New Maze if a run has been initiated and/or concluded and then click either BFS or DFS
+
+## In development
+
+- Additional search methods
+- A sorting algorithm visualizer
 
 ```js
 export default {
@@ -22,7 +28,7 @@ export default {
     project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
